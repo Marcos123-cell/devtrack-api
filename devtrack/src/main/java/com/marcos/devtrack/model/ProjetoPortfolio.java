@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "projetos_portfolio")
@@ -31,4 +32,14 @@ public class ProjetoPortfolio {
     private LocalDate dataInicio;
 
     private LocalDate dataConclusao;
+
+    @ManyToMany
+    @JoinTable(
+            name = "projeto_tecnologia",
+            joinColumns = @JoinColumn(name = "projeto_id"),
+            inverseJoinColumns = @JoinColumn(name = "tecnologia_id")
+    )
+
+    private List<Tecnologia> tecnologias;
+
 }

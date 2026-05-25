@@ -35,6 +35,7 @@ public class ProjetoPortfolioService {
         projeto.setLinkGithub(novoProjeto.getLinkGithub());
         projeto.setDataInicio(novoProjeto.getDataInicio());
         projeto.setDataConclusao(novoProjeto.getDataConclusao());
+        projeto.setTecnologias(novoProjeto.getTecnologias());
 
         return projetoPortfolioRepository.save(projeto);
     }
