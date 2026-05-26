@@ -1,7 +1,7 @@
 package com.marcos.devtrack.repository;
 
-import com.marcos.devtrack.model.Tecnologia;
+import com.marcos.devtrack.model.TecnologiaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TecnologiaRepository extends JpaRepository<Tecnologia, Long> {
+public interface TecnologiaRepository extends JpaRepository<TecnologiaEntity, Long> {
 }

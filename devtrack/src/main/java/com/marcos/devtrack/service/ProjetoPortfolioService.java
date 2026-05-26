@@ -1,6 +1,6 @@
 package com.marcos.devtrack.service;
 
-import com.marcos.devtrack.model.ProjetoPortfolio;
+import com.marcos.devtrack.model.ProjetoPortfolioEntity;
 import com.marcos.devtrack.repository.ProjetoPortfolioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,21 +13,21 @@ public class ProjetoPortfolioService {
 
     private final ProjetoPortfolioRepository projetoPortfolioRepository;
 
-    public ProjetoPortfolio salvar(ProjetoPortfolio projetoPortfolio){
+    public ProjetoPortfolioEntity salvar(ProjetoPortfolioEntity projetoPortfolio){
         return projetoPortfolioRepository.save(projetoPortfolio);
     }
 
-    public List<ProjetoPortfolio> listarTodos(){
+    public List<ProjetoPortfolioEntity> listarTodos(){
         return projetoPortfolioRepository.findAll();
     }
 
-    public ProjetoPortfolio buscarPorId(Long id){
+    public ProjetoPortfolioEntity buscarPorId(Long id){
         return projetoPortfolioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Projeto não encontrado"));
     }
 
-    public ProjetoPortfolio atualizar(Long id, ProjetoPortfolio novoProjeto) {
-        ProjetoPortfolio projeto = buscarPorId(id);
+    public ProjetoPortfolioEntity atualizar(Long id, ProjetoPortfolioEntity novoProjeto) {
+        ProjetoPortfolioEntity projeto = buscarPorId(id);
 
         projeto.setNome(novoProjeto.getNome());
         projeto.setDescricao(novoProjeto.getDescricao());
@@ -41,7 +41,7 @@ public class ProjetoPortfolioService {
     }
 
     public void deletar(Long id){
-        ProjetoPortfolio projetoPortfolio = buscarPorId(id);
+        ProjetoPortfolioEntity projetoPortfolio = buscarPorId(id);
         projetoPortfolioRepository.delete(projetoPortfolio);
     }
 

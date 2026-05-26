@@ -1,6 +1,6 @@
 package com.marcos.devtrack.service;
 
-import com.marcos.devtrack.model.Tecnologia;
+import com.marcos.devtrack.model.TecnologiaEntity;
 import com.marcos.devtrack.repository.TecnologiaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,21 +12,21 @@ import java.util.List;
 public class TecnologiaService {
     private final TecnologiaRepository tecnologiaRepository;
 
-    public Tecnologia salvar(Tecnologia tecnologia){
+    public TecnologiaEntity salvar(TecnologiaEntity tecnologia){
         return tecnologiaRepository.save(tecnologia);
     }
 
-    public List<Tecnologia> listarTodas(){
+    public List<TecnologiaEntity> listarTodas(){
         return tecnologiaRepository.findAll();
     }
 
-    public Tecnologia buscarPorId(Long id) {
+    public TecnologiaEntity buscarPorId(Long id) {
         return tecnologiaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Tecnologia não encontrada"));
     }
 
-    public Tecnologia atualizar(Long id, Tecnologia novaTecnologia) {
-        Tecnologia tecnologia = buscarPorId(id);
+    public TecnologiaEntity atualizar(Long id, TecnologiaEntity novaTecnologia) {
+        TecnologiaEntity tecnologia = buscarPorId(id);
 
         tecnologia.setNome(novaTecnologia.getNome());
         tecnologia.setCategoria(novaTecnologia.getCategoria());
@@ -37,7 +37,7 @@ public class TecnologiaService {
     }
 
     public void deletar(Long id) {
-        Tecnologia tecnologia = buscarPorId(id);
+        TecnologiaEntity tecnologia = buscarPorId(id);
         tecnologiaRepository.delete(tecnologia);
     }
 

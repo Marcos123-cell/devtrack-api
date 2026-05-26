@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class ProjetoPortfolio {
+public class ProjetoPortfolioEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -40,6 +40,6 @@ public class ProjetoPortfolio {
             inverseJoinColumns = @JoinColumn(name = "tecnologia_id")
     )
 
-    private List<Tecnologia> tecnologias;
+    private List<TecnologiaEntity> tecnologias;
 
 }

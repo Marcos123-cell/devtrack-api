@@ -1,6 +1,6 @@
 package com.marcos.devtrack.controller;
 
-import com.marcos.devtrack.model.Tecnologia;
+import com.marcos.devtrack.model.TecnologiaEntity;
 import com.marcos.devtrack.service.TecnologiaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,22 +15,22 @@ public class TecnologiaController {
     private final TecnologiaService tecnologiaService;
 
     @PostMapping
-    public Tecnologia salvar(@RequestBody Tecnologia tecnologia) {
+    public TecnologiaEntity salvar(@RequestBody TecnologiaEntity tecnologia) {
         return tecnologiaService.salvar(tecnologia);
     }
 
     @GetMapping
-    public List<Tecnologia> listarTodas() {
+    public List<TecnologiaEntity> listarTodas() {
         return tecnologiaService.listarTodas();
     }
 
     @GetMapping("/{id}")
-    public Tecnologia buscarPorId(@PathVariable Long id) {
+    public TecnologiaEntity buscarPorId(@PathVariable Long id) {
         return tecnologiaService.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public Tecnologia atualizar(@PathVariable Long id, @RequestBody Tecnologia tecnologia) {
+    public TecnologiaEntity atualizar(@PathVariable Long id, @RequestBody TecnologiaEntity tecnologia) {
         return tecnologiaService.atualizar(id, tecnologia);
     }
 

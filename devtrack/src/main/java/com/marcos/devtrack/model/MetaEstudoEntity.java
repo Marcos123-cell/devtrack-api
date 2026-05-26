@@ -6,22 +6,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
-@Table(name = "Tecnologias")
+@Table(name = "metas_estudos")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-public class Tecnologia {
+@NoArgsConstructor
+public class MetaEstudoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-
-    private String categoria;
-
-    private String nivel;
+    private String titulo;
 
     private String descricao;
+
+    private String status;
+
+    private LocalDate dataCriacao;
+
+    private LocalDate dataPrazo;
+
+
 }
