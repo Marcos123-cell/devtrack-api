@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MetaEstudoService {
+
     private final MetaEstudoRepository metaEstudoRepository;
 
     public MetaEstudoEntity salvar(MetaEstudoEntity metaEstudo){
