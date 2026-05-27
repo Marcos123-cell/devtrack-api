@@ -1,5 +1,7 @@
 package com.marcos.devtrack.service;
 
+import com.marcos.devtrack.dto.SessaoEstudoRequestDTO;
+import com.marcos.devtrack.dto.SessaoestudoResponseDTO;
 import com.marcos.devtrack.model.SessaoEstudoEntity;
 import com.marcos.devtrack.repository.SessaoEstudoRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +15,28 @@ public class SessaoEstudoService {
 
     private final SessaoEstudoRepository sessaoEstudoRepository;
 
-    public SessaoEstudoEntity salvar(SessaoEstudoEntity sessaoEstudoEntity){
-        return sessaoEstudoRepository.save(sessaoEstudoEntity);
+    private final
+
+    public SessaoestudoResponseDTO salvar(SessaoEstudoRequestDTO dto) {
+
+        SessaoEstudoEntity sessao = new SessaoEstudoEntity();
+
+        sessao.setTitulo(dto.titulo());
+        sessao.setDescricao(dto.descricao());
+        sessao.setDataPrazo(dto.dataPrazo());
+        sessao.setDuracaoMinutos(dto.duracaoMinutos());
+        sessao.setObservacoes(dto.observacoes());
+
+        SessaoEstudoEntity sessaoSalva = sessaoEstudoRepository.save(sessao);
+
+        return new SessaoestudoResponseDTO(
+                sessaoSalva.getId(),
+                sessaoSalva.getTitulo(),
+                sessaoSalva.getDescricao(),
+                sessaoSalva.getDataPrazo(),
+                sessaoSalva.getDuracaoMinutos(),
+                sessaoSalva.getObservacoes()
+        );
     }
 
     public List<SessaoEstudoEntity> listarTodos(){
