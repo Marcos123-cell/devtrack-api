@@ -23,6 +23,7 @@ A ideia do sistema é permitir o controle da evolução nos estudos de tecnologi
 - Lombok
 - Maven
 - Postman
+- Git/GitHub
 
 ---
 
@@ -75,6 +76,14 @@ DELETE  /tecnologias/{id}
 
 CRUD completo de projetos desenvolvidos.
 
+Funcionalidades:
+
+- Cadastro de projetos
+- Status de desenvolvimento
+- Link do GitHub
+- Datas de início e conclusão
+- Relacionamento com tecnologias
+
 Endpoints:
 
 ```http
@@ -87,16 +96,64 @@ DELETE  /projetos/{id}
 
 ---
 
+## Metas de Estudo
+
+CRUD completo de metas de estudo.
+
+Funcionalidades:
+
+- Cadastro de metas
+- Controle de prazo
+- Status de progresso
+- Organização de objetivos de aprendizado
+
+Endpoints:
+
+```http
+POST    /metas
+GET     /metas
+GET     /metas/{id}
+PUT     /metas/{id}
+DELETE  /metas/{id}
+```
+
+---
+
+## Sessões de Estudo
+
+CRUD completo de sessões de estudo realizadas.
+
+Funcionalidades:
+
+- Registro de sessões de estudo
+- Controle de duração dos estudos
+- Observações sobre aprendizado
+- Organização do progresso diário
+
+Endpoints:
+
+```http
+POST    /sessoes
+GET     /sessoes
+GET     /sessoes/{id}
+PUT     /sessoes/{id}
+DELETE  /sessoes/{id}
+```
+
+---
+
 # 🔄 Próximas implementações
 
-- Relacionamento entre ProjetoPortfolio e Tecnologia
-- Cadastro de metas de estudo
-- Registro de sessões de estudo
-- Progresso por tecnologia
-- Relatórios simples:
-    - horas estudadas
-    - metas concluídas
-    - tecnologias mais praticadas
+- DTOs
+- Validações com Bean Validation
+- Tratamento global de exceções
+- Swagger/OpenAPI
+- Spring Security + JWT
+- Paginação
+- Relatórios de progresso
+- Dashboard de evolução
+- Docker
+- Deploy da aplicação
 
 ---
 
@@ -116,6 +173,9 @@ Durante o desenvolvimento deste projeto estou praticando:
 - Requisições HTTP
 - JSON
 - Postman
+- Organização em camadas
+- Controle de versionamento com Git/GitHub
+- Boas práticas REST
 
 ---
 
