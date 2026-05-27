@@ -202,12 +202,13 @@ devtrack_db
 ## Configurar application.properties
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/devtrack_db
-spring.datasource.username=postgres
-spring.datasource.password=SUA_SENHA
+spring.datasource.url=${DB_URL}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
 ```
 
 ---
